@@ -30,12 +30,12 @@ public class numberWizard : MonoBehaviour
                 print("Up arrow key was pressed");
             }
 
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 print("Down arrow key was pressed");
             }
 
-            if (Input.GetKeyDown(KeyCode.Return))
+            else if (Input.GetKeyDown(KeyCode.Return)) 
             {
                 print("Enter/Return key was pressed");
             }
