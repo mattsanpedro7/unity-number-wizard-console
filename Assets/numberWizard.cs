@@ -14,12 +14,11 @@ public class numberWizard : MonoBehaviour
     {
         // print("Welcome to number wizard!");
         // gives more flexibility and control
-        Debug.Log("Welcome to number wizard!");
-        Debug.Log("Pick a number");
-        Debug.Log("The highest number is: " + max);
-        Debug.Log("The lowest number is: " + min);
-        Debug.Log("Tell me if your number is higher or greater than 500");
+        Debug.Log("Welcome to number wizard, home of Harry Pothead!");
+        Debug.Log("Pick a number between " + min + " and " + max);
+        Debug.Log("Tell me if your number is higher or greater than " + guess);
         Debug.Log("Push up = higher, Push down = lower, Push enter = number found");
+        Debug.Log("Press space to print current guessed number.");
 
         // edge case, cannot reach 1000, will stop at max-1 OR 999
         max = max + 1;
@@ -29,27 +28,32 @@ public class numberWizard : MonoBehaviour
     void Update()
     {
         {
+            // if (Input.GetKeyDown(KeyCode.Space))
+            // {
+            //     Debug.Log("Current guess is at: " + guess);
+            // }
+            
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                print("Up arrow key was pressed");
                 min = guess;
                 guess = (max + min) / 2;
-                Debug.Log("Guess is: " + guess);
-                Debug.Log("New min is: " + min);
+                Debug.Log("Is it higher or greater than: " + guess);
+                // Debug.Log("Guess is: " + guess);
+                // Debug.Log("New min is: " + min);
             }
 
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                print("Down arrow key was pressed");
                 max = guess;
                 guess = (max + min) / 2;
-                Debug.Log("Guess is: " + guess);
-                Debug.Log("New max is: " + max);
+                Debug.Log("Is it higher or greater than: " + guess);
+                // Debug.Log("Guess is: " + guess);
+                // Debug.Log("New max is: " + max);
             }
 
             else if (Input.GetKeyDown(KeyCode.Return)) 
             {
-                print("Enter/Return key was pressed");
+                print("Your number was found!  It is: " + guess);
             }
         }
     }
