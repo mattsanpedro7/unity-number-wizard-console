@@ -5,9 +5,9 @@ using UnityEngine;
 public class numberWizard : MonoBehaviour
 {
     // declare variable and initialize
-    int max = 1000;
-    int min = 0;
-    int guess = 500;
+    int max;
+    int min;
+    int guess;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,9 @@ public class numberWizard : MonoBehaviour
     // () = nothing
     void StartGame() 
     {
+        max = 1000;
+        min = 0;
+        guess = 500;
         // print("Welcome to number wizard!");
         // Debug.Log gives more flexibility and control
         // Encapsulating: moving code into a function (aka "Blackbox")
@@ -63,6 +66,7 @@ public class numberWizard : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Return)) 
             {
                 print("Your number was found!  It is: " + guess);
+                StartGame();
             }
         }
     }
