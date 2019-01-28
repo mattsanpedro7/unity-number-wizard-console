@@ -7,15 +7,18 @@ public class numberWizard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // declare variable
-        int max;
+        // declare variable and initilize
+        int max = 1000;
+        int min = 0;
 
         // print("Welcome to number wizard!");
         // gives more flexibility and control
         Debug.Log("Welcome to number wizard!");
         Debug.Log("Pick a number");
-        Debug.Log("The highest number is: 5000");
-        Debug.Log("The lowest number is: 0");
+        Debug.Log("The highest number is: " + max);
+        Debug.Log("The lowest number is: " + min);
+        Debug.Log("Tell me if your number is higher or greater than 500");
+        Debug.Log("Push up = higher, Push down = lower, Push enter = number found");
     }
 
     // Update is called once per frame
