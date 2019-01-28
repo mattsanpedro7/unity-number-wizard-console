@@ -12,6 +12,15 @@ public class numberWizard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartGame();
+    }
+
+    // This is a function, def as a "contract", it is a recipe
+    // void = return nothing
+    // function name should describe "What to do"
+    // () = nothing
+    void StartGame()
+    {
         // print("Welcome to number wizard!");
         // gives more flexibility and control
         Debug.Log("Welcome to number wizard, home of Harry Pothead!");
@@ -22,6 +31,7 @@ public class numberWizard : MonoBehaviour
 
         // edge case, cannot reach 1000, will stop at max-1 OR 999
         max = max + 1;
+
     }
 
     // Update is called once per frame
