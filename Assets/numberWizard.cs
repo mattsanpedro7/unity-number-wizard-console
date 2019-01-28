@@ -19,10 +19,11 @@ public class numberWizard : MonoBehaviour
     // void = return nothing
     // function name should describe "What to do"
     // () = nothing
-    void StartGame()
+    void StartGame() 
     {
         // print("Welcome to number wizard!");
-        // gives more flexibility and control
+        // Debug.Log gives more flexibility and control
+        // Encapsulating: moving code into a function (aka "Blackbox")
         Debug.Log("Welcome to number wizard, home of Harry Pothead!");
         Debug.Log("Pick a number between " + min + " and " + max);
         Debug.Log("Tell me if your number is higher or greater than " + guess);
@@ -46,8 +47,7 @@ public class numberWizard : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 min = guess;
-                guess = (max + min) / 2;
-                Debug.Log("Is it higher or greater than: " + guess);
+                NextGuess();
                 // Debug.Log("Guess is: " + guess);
                 // Debug.Log("New min is: " + min);
             }
@@ -55,8 +55,7 @@ public class numberWizard : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 max = guess;
-                guess = (max + min) / 2;
-                Debug.Log("Is it higher or greater than: " + guess);
+                NextGuess();
                 // Debug.Log("Guess is: " + guess);
                 // Debug.Log("New max is: " + max);
             }
@@ -66,5 +65,12 @@ public class numberWizard : MonoBehaviour
                 print("Your number was found!  It is: " + guess);
             }
         }
+    }
+
+    void NextGuess() 
+    {
+        // refactor the if statements
+        guess = (max + min) / 2;
+        Debug.Log("Is it higher or greater than: " + guess);
     }
 }
